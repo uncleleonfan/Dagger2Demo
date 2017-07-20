@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(TAG, "onCreate: " + mUser.name);
         FrameLayout frameLayout = (FrameLayout) findViewById(R.id.frame);
-        mTextView.setText("Hello Dagger2");
+        mTextView.setText(mUser.name);
         frameLayout.addView(mTextView);
     }
 }
