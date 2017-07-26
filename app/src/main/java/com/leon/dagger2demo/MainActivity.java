@@ -2,7 +2,6 @@ package com.leon.dagger2demo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -24,9 +23,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         DaggerMainComponent.builder().textViewModule(new TextViewModule(this)).build().inject(this);
 
-        Log.d(TAG, "onCreate: " + mUser.name);
         FrameLayout frameLayout = (FrameLayout) findViewById(R.id.frame);
         mTextView.setText(mUser.name);
         frameLayout.addView(mTextView);
+
+        Computer computer = new Computer();
+        computer.init();
     }
 }
+
+
+

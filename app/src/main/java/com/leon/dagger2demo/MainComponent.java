@@ -7,3 +7,5 @@ public interface MainComponent {
 
     void inject(MainActivity activity);
 }
+
+

@@ -38,7 +38,7 @@ Dagger的作用就是通过注解的方式，帮我们自动生成创建对象�
 
 ## Dagger 2使用 ##
 ### 1. 添加依赖 ###
-可通过链接https://github.com/google/dagger/releases查找最新版本
+可通过链接[https://github.com/google/dagger/releases](https://github.com/google/dagger/releases)查找最新版本
 
 	dependencies {
 	    compile 'com.google.dagger:dagger:2.11'
