@@ -25,6 +25,12 @@ public class Computer {
     @MouseType("wireless")
     Mouse mMouse;
 
+    @Inject
+    MainBoard mainBoard1;
+
+    @Inject
+    MainBoard mainBoard2;
+
     public void init() {
         DaggerComputerComponent.builder().build().inject(this);
 
@@ -35,6 +41,9 @@ public class Computer {
         Log.d(TAG, "init: " + mNetwork.get());
 
         Log.d(TAG, "init: " + mMouse.name());
+
+        Log.d(TAG, "init: " + mainBoard1);
+        Log.d(TAG, "init: " + mainBoard2);
     }
 
 }
