@@ -31,6 +31,8 @@ public class Computer {
     @Inject
     MainBoard mainBoard2;
 
+
+
     public void init() {
         DaggerComputerComponent.builder().build().inject(this);
 
