@@ -31,10 +31,15 @@ public class Computer {
     @Inject
     MainBoard mainBoard2;
 
+    @Inject
+    HardDisk250G mHardDisk250G;
+
 
 
     public void init() {
-        DaggerComputerComponent.builder().build().inject(this);
+        DaggerComputerComponent.builder()
+                .hardDiskComponent(DaggerHardDiskComponent.create())
+                .build().inject(this);
 
         Log.d(TAG, "init: " + mUsb.get());
         Log.d(TAG, "init: " + mUsb.get());
@@ -46,6 +51,9 @@ public class Computer {
 
         Log.d(TAG, "init: " + mainBoard1);
         Log.d(TAG, "init: " + mainBoard2);
+
+        Log.d(TAG, "init: " + mHardDisk250G);
+
     }
 
 }
