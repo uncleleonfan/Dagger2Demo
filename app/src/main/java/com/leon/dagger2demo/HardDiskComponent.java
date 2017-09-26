@@ -1,7 +1,10 @@
 package com.leon.dagger2demo;
 
+import javax.inject.Singleton;
+
 import dagger.Component;
 
+@Singleton
 @Component(modules = HardDiskModule.class)
 public interface HardDiskComponent {
 

@@ -1,9 +1,8 @@
 package com.leon.dagger2demo;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
-@Singleton
+@MyScope
 public class MainBoard {
 
     @Inject

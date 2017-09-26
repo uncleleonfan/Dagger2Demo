@@ -2,10 +2,11 @@ package com.leon.dagger2demo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.util.Log;
 
 import javax.inject.Inject;
+
+import dagger.android.AndroidInjection;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,18 +15,26 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     User mUser;
 
-    @Inject
-    TextView mTextView;
+//    @Inject
+//    TextView mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DaggerMainComponent.builder().textViewModule(new TextViewModule(this)).build().inject(this);
 
-        FrameLayout frameLayout = (FrameLayout) findViewById(R.id.frame);
-        mTextView.setText(mUser.name);
-        frameLayout.addView(mTextView);
+//        DaggerMainComponent.builder()
+//                .textViewModule(new TextViewModule(this))
+//                .build()
+//                .inject(this);
+
+        Log.d(TAG, "onCreate: User is " + mUser.name);
+
+//        FrameLayout frameLayout = (FrameLayout) findViewById(R.id.frame);
+//        mTextView.setText(mUser.name);
+//        frameLayout.addView(mTextView);
 
         Computer computer = new Computer();
         computer.init();

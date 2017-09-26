@@ -1,11 +1,11 @@
 package com.leon.dagger2demo;
 
-import javax.inject.Singleton;
-
 import dagger.Component;
 
-@Singleton
+@MyScope
 @Component(dependencies = HardDiskComponent.class, modules = MouseModule.class)
 public interface ComputerComponent {
-    void inject(Computer computer);
+//    void inject(Computer computer);
+
+    LaptopComponent laptopComponent();
 }

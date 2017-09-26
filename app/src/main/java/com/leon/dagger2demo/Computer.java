@@ -34,12 +34,21 @@ public class Computer {
     @Inject
     HardDisk250G mHardDisk250G;
 
+    @Inject
+    TouchPad mTouchPad;
+
 
 
     public void init() {
+
+//        DaggerComputerComponent.builder()
+//                .hardDiskComponent(DaggerHardDiskComponent.create())
+//                .build().inject(this);
         DaggerComputerComponent.builder()
                 .hardDiskComponent(DaggerHardDiskComponent.create())
-                .build().inject(this);
+                .build()
+                .laptopComponent()
+                .inject(this);
 
         Log.d(TAG, "init: " + mUsb.get());
         Log.d(TAG, "init: " + mUsb.get());
@@ -53,6 +62,8 @@ public class Computer {
         Log.d(TAG, "init: " + mainBoard2);
 
         Log.d(TAG, "init: " + mHardDisk250G);
+
+        Log.d(TAG, "init: " + mTouchPad);
 
     }
 
