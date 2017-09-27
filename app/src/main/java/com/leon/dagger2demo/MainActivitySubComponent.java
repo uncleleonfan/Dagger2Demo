@@ -4,6 +4,7 @@ import dagger.Subcomponent;
 import dagger.android.AndroidInjector;
 
 @Subcomponent(modules = TextViewModule.class)
+//@Subcomponent
 public interface MainActivitySubComponent extends AndroidInjector<MainActivity>{
 
     @Subcomponent.Builder
