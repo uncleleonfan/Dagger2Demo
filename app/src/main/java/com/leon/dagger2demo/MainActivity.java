@@ -1,8 +1,15 @@
 package com.leon.dagger2demo;
 
+import android.app.Fragment;
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -44,6 +51,29 @@ public class MainActivity extends AppCompatActivity {
 
         Computer computer = new Computer();
         computer.init();
+    }
+
+
+    public static class MainFragment extends Fragment {
+
+        @Inject
+        User mUser;
+
+        @Nullable
+        @Override
+        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+            TextView textView = new TextView(getActivity());
+            textView.setTextColor(Color.WHITE);
+            textView.setText(mUser.name);
+            textView.setBackgroundColor(Color.BLUE);
+            return textView;
+        }
+
+        @Override
+        public void onAttach(Context context) {
+            AndroidInjection.inject(this);
+            super.onAttach(context);
+        }
     }
 }
 

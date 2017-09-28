@@ -8,4 +8,11 @@
     android:layout_height="match_parent"
     tools:context="com.leon.dagger2demo.MainActivity">
 
+    <fragment
+        android:id="@+id/main_fragment"
+        class="com.leon.dagger2demo.MainActivity$MainFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"/>
+
 </FrameLayout>
